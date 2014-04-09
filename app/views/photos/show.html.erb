@@ -1,0 +1,26 @@
+<h1><%= @photo.title %></h1>
+
+<% if prev_photo = @photo.gen_link("prev") %>
+<div class="previous_photo">
+  <%= link_to "<", prev_photo %>
+</div>
+<% end %>
+<% if next_photo = @photo.gen_link("next") %>
+<div class="next_photo">
+  <%= link_to ">", next_photo %>
+</div>
+<% end %>
+
+
+<h3 class="image_show_subtitle">Uploaded by <span class="image_show_uploader"><%= @photo.uploader %></span><br><span class="image_show_createdat"><%= @photo.created_at %></span></h3>
+
+<div class="image_show_edit_container">
+  <%= link_to "Edit this photo", edit_photo_path(@photo) %><%= link_to "Delete this photo", photo_path(@photo), method: :delete %>
+</div>
+
+<div class="image_show_container">
+  <img src="<%= @photo.url %>" />
+</div>
+<div class="return_link_container">
+  <%= link_to "Return to Photos", photos_path %>
+</div>

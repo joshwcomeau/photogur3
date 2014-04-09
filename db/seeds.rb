@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Photo.create!(
+  title: "The Old Man",
+  uploader: "vamp1re_lover_69",
+  url: "http://joshuaunruh.com/wp-content/uploads/2014/03/Vampire.jpg"
+
+)
