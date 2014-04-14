@@ -1,14 +1,17 @@
 class PhotosController < ApplicationController
   def index
-    @photos = Photo.all
+    @photos = Photo.before(3.days.ago)
   end
 
   def show
     @photo = Photo.find(params[:id])
+    # get related comments
+    @comments = @photo.comments
+    @comment = Comment.new
   end
 
   def edit
-    @photo = Photo.find(params[:id])
+    @photo = Photo.most_recent_five
   end
 
   def update

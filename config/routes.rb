@@ -20,6 +20,8 @@ Photogur3::Application.routes.draw do
   delete '/photos/:id' => 'photos#destroy'
 
 
+  resources :comments
+
 
   root :to => 'photos#index'
   # The priority is based upon order of creation: first created -> highest priority.
